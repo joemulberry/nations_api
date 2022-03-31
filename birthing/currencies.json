@@ -1,0 +1,10 @@
+
+[
+    {"currency":"$BTC", "rarity":"common"},
+    {"currency":"$ETH", "rarity":"common"},
+    {"currency":"$STG", "rarity":"uncommon"},
+    {"currency":"$DOGE", "rarity":"rare"},
+    {"currency":"$STILT", "rarity":"legendary"},
+    {"currency":"$MRI", "rarity":"legendary"},
+    {"currency":"$APE", "rarity":"common"}
+]
