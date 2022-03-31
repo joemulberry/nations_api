@@ -5,6 +5,10 @@ from random import choice as rchoice
 import json
 from fastapi import FastAPI, Path
 
+# TO-DO
+# comment code
+# replace numpy.choice with random.choices
+###
 
 app = FastAPI()
 
@@ -139,9 +143,11 @@ for idx in range(NO_NATIONS):
 if verbose:
     print(nationDicts)
 
+
 @app.get("/")
 def index():
     return {'name': 'api data set for the Nations of One project'}
+
 
 @app.get("/{tokenID}")
 def get_nation(tokenID: int = Path(None, description="The tokenID of the nation")):
