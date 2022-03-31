@@ -1,13 +1,10 @@
 from numpy.random import choice
 from random import choice as rchoice, randint
-import pandas as pd
 from numpy.random import choice
 from random import choice as rchoice
 import json
-import numpy as np
 from fastapi import FastAPI, Path
-from typing import Optional
-from pydantic import BaseModel
+
 
 app = FastAPI()
 
@@ -139,13 +136,12 @@ for idx in range(NO_NATIONS):
     nationDicts[idx] = {'name': namesPool[idx], 'union': unionList[idx],
                         'currency': curPool[idx], 'primary_export': expPool[idx]}
 
-print(nationDicts)
-
+if verbose:
+    print(nationDicts)
 
 @app.get("/")
 def index():
     return {'name': 'api data set for the Nations of One project'}
-
 
 @app.get("/{tokenID}")
 def get_nation(tokenID: int = Path(None, description="The tokenID of the nation")):
