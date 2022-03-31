@@ -1,9 +1,14 @@
-from lib2to3.pgen2.token import OP
 from fastapi import FastAPI, Path
 from typing import Optional
 from pydantic import BaseModel
 
 app = FastAPI()
+
+names = ['yoyo', 'nono', 'mummu']
+unions = ['Altia', 'Strattia', 'Cumllia']
+exports = ['Milo', 'Paper', 'Cocoa']
+nations_ = dict(zip(names, unions, exports))
+
 
 nations = {
     0: {

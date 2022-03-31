@@ -1,0 +1,7 @@
+Coal,0.1
+Avacados,0.1
+Misinformation,0.1
+NFTs,0.1
+CPUs,0.1
+Micro-Chips,0.1
+Coconuts,0.4
