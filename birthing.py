@@ -14,8 +14,8 @@ from glob import glob
 app = FastAPI()
 
 # print out during development
-# verbose = True
-verbose = False
+verbose = True
+# verbose = False
 
 # set some important global parameters
 NO_NATIONS = 100
@@ -139,8 +139,9 @@ if verbose:
 # add flags
 flagfiles = glob('images/*.png')
 flagURLS = ['https://gateway.pinata.cloud/ipfs/QmRiwmkTCVUxYNiqsA2xsgNHbnmLCeYNexz3UUhT2gnjsZ' +
-            f.strip('images') for f in flagfiles]
+            f.strip('images').strip('.pn') + '.png' for f in flagfiles]
 
+print(flagURLS[0])
 
 nationDicts = {}
 for idx in range(NO_NATIONS):
