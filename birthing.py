@@ -4,6 +4,7 @@ from numpy.random import choice
 from random import choice as rchoice
 import json
 from fastapi import FastAPI, Path
+from glob import glob
 
 # TO-DO
 # comment code
@@ -134,11 +135,19 @@ unionList = choice(unionInit, NO_NATIONS, p=unionP)
 if verbose:
     print(len(unionList), 'unions in list')
 
+
+# add flags
+flagfiles = glob('images/*.png')
+flagURLS = ['https://gateway.pinata.cloud/ipfs/QmRiwmkTCVUxYNiqsA2xsgNHbnmLCeYNexz3UUhT2gnjsZ' +
+            f.strip('images') for f in flagfiles]
+
+
 nationDicts = {}
 for idx in range(NO_NATIONS):
     print(namesPool[idx])
     nationDicts[idx] = {'name': namesPool[idx], 'union': unionList[idx],
-                        'currency': curPool[idx], 'primary_export': expPool[idx]}
+                        'currency': curPool[idx], 'primary_export': expPool[idx],
+                        'image': flagURLS[idx]}
 
 if verbose:
     print(nationDicts)
